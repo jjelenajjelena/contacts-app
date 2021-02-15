@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import AccountsTable from "./components/AccountsTable/AccountsTable";
 import AddAccount from "./components/AddAccount/AddAccount";
+import EditTable from "./components/EditTable/EditTable";
 
 import Header from "./components/Header/Header";
 
@@ -18,6 +19,15 @@ addNewAccountToState = (acc) => {
   });
 };
 
+deleteAccount = (id) => {
+  const accountsCopy = [...this.state.accounts];
+  const newCopyAccounts = accountsCopy.filter(
+      (account) => account.id !== id
+  );
+  localStorage.contacts = JSON.stringify(newCopyAccounts);
+  this.setState({ accounts: newCopyAccounts });
+};
+
     render() {
         return (
             <div>
@@ -29,6 +39,12 @@ addNewAccountToState = (acc) => {
                     <Route path="/add">
                         <AddAccount
                             addNewAccountToState={this.addNewAccountToState}
+                        />
+                    </Route>
+                    <Route path="/edit">
+                        <EditTable
+                            accounts={this.state.accounts}
+                            deleteAccount={this.deleteAccount}
                         />
                     </Route>
                 </BrowserRouter>
