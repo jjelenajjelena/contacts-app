@@ -12,6 +12,16 @@ export default class App extends Component {
     accounts: []
 };
 
+componentDidMount() {
+  let data = [];
+  if(localStorage.getItem('contacts')){
+      data = JSON.parse(localStorage.contacts);
+  }
+  this.setState({
+      accounts : data
+  })
+}
+
 addNewAccountToState = (acc) => {
   localStorage.contacts = JSON.stringify([...this.state.accounts,acc]);
   this.setState({
