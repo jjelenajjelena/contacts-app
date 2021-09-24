@@ -1,3 +1,31 @@
+# Contacts App
+
+Aplikacija za evidentiranje kontakata
+
+## Osnovne funkcionalnosti
+
+Aplikacija pruža mogućnost pregleda, dodavanja i brisanja kontakata.
+Za svaki kontakt moguće je uneti sledeće podatke:
+- id
+- Name
+- Last Name
+- Phone
+- Email
+
+### Pregled kontakata
+
+Kontakti se prikazuju na [početnoj strani](http://localhost:3000) odnosno klikom na link [All Contacts](http://localhost:3000).
+
+### Dodavanje kontakta
+
+Formi za dodavanje kontakta pristupa se putem linka [Add Contacts](http://localhost:3000/add).\
+U formu *New Contact* unose se podaci i čuvaju klikom na dugme *Save*.
+
+### Brisanje kontakta
+
+Strani za brisanje kontakt se pristupa putem linka  [Delete Contact](http://localhost:3000/edit).\
+Kontakt se briše klikom na dugme *Delete* koje se nalazi u istom redu kao i sam kontakt.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
